@@ -25,6 +25,7 @@
     "msgpackr": "^1.11.2",
     "sializer": "0",
     "tinybench": "^3.0.6",
+    "ts-proto": "^2.4.2",
     "typescript": "^5.4.3",
     "ws": "^8.18.0"
   },

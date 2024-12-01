@@ -20,6 +20,11 @@ import {
   msgpackrFiveThousandUsersDecode,
 } from "./tests/msgpackr.js";
 
+import {
+  protobufFiveThousandUsers,
+  protobufFiveThousandUsersDecode,
+} from "./tests/protobuf.js";
+
 const bench = new Bench({ name: "serialization", time: 60 * 1000 });
 
 bench.add("JSON", () => jsonFiveThousandUsers());
@@ -27,6 +32,7 @@ bench.add("Sializer", () => siaFiveThousandUsers());
 bench.add("Sializer (v1)", () => siaOneFiveThousandUsers());
 bench.add("CBOR-X", () => cborFiveThousandUsers());
 bench.add("MsgPackr", () => msgpackrFiveThousandUsers());
+bench.add("Protobuf", () => protobufFiveThousandUsers());
 
 console.log(`Running ${bench.name} benchmark...`);
 await bench.run();
@@ -43,6 +49,7 @@ deserializeBench.add("Sializer", () => siaFiveThousandUsersDecode());
 deserializeBench.add("Sializer (v1)", () => siaOneFiveThousandUsersDecode());
 deserializeBench.add("CBOR-X", () => cborFiveThousandUsersDecode());
 deserializeBench.add("MsgPackr", () => msgpackrFiveThousandUsersDecode());
+deserializeBench.add("Protobuf", () => protobufFiveThousandUsersDecode());
 
 console.log(`Running ${deserializeBench.name} benchmark...`);
 await deserializeBench.run();
@@ -54,3 +61,4 @@ console.log("Sia v1 file size:", siaOneFiveThousandUsers().length);
 console.log("JSON file size:", jsonFiveThousandUsers().length);
 console.log("MsgPackr file size:", cborFiveThousandUsers().length);
 console.log("CBOR-X file size:", msgpackrFiveThousandUsers().length);
+console.log("Protobuf file size:", protobufFiveThousandUsers().length);
