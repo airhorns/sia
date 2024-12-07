@@ -19,10 +19,13 @@
   "license": "ISC",
   "devDependencies": {
     "@faker-js/faker": "^9.2.0",
+    "@furyjs/fury": "^0.0.18",
     "@types/node": "^22.9.0",
     "@types/ws": "^8",
+    "avsc": "^5.7.7",
     "cbor-x": "^1.6.0",
     "msgpackr": "^1.11.2",
+    "seqproto": "^0.2.3",
     "sializer": "0",
     "tinybench": "^3.0.6",
     "ts-proto": "^2.4.2",
